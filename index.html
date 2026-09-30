@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Servis Kompor Panggilan Terpercaya | Modena, Delizia, Teka, Rinnai</title>
+    <meta name="description" content="Layanan servis kompor gas panggilan profesional. Spesialis merk Modena, Delizia, Teka, Rinnai, dan lainnya. Cepat, bergaransi, dan teknisi berpengalaman.">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#ef4444', // Red-500 for a heat/kitchen vibe
+                        primaryDark: '#dc2626', // Red-600
+                        whatsapp: '#25D366',
+                        whatsappDark: '#128C7E',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='#ef4444' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .brand-logo {
+            transition: all 0.3s ease;
+            filter: grayscale(100%) opacity(0.7);
+        }
+        .brand-logo:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
+        }
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+        .float-wa:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+        
+        /* Animasi Baru untuk Ikon Layanan */
+        @keyframes icon-float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-icon-float {
+            animation: icon-float 3s ease-in-out infinite;
+        }
+        @keyframes icon-pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        .group:hover .icon-glow {
+            animation: icon-pulse-glow 1.5s infinite;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50 selection:bg-primary selection:text-white">
+
+    <!-- WhatsApp Number constant for easy updating -->
+    <script>
+        const waNumber = "6281316097732";
+        const waMessage = encodeURIComponent("Halo, saya ingin menanyakan tentang jasa servis kompor.");
+        const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
+        
+        function openWhatsApp() {
+            window.open(waLink, '_blank');
+        }
+    </script>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-fire-burner text-primary text-3xl mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight">Klinik<span class="text-primary">Kompor</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#layanan" class="text-gray-600 hover:text-primary font-medium transition">Layanan</a>
+                    <a href="#merk" class="text-gray-600 hover:text-primary font-medium transition">Merk</a>
+                    <a href="#keunggulan" class="text-gray-600 hover:text-primary font-medium transition">Keunggulan</a>
+                    <a href="#testimoni" class="text-gray-600 hover:text-primary font-medium transition">Testimoni</a>
+                    <button onclick="openWhatsApp()" class="bg-primary hover:bg-primaryDark text-white px-6 py-2 rounded-full font-medium transition shadow-lg shadow-red-500/30 flex items-center">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Hubungi Sekarang
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t mt-4 absolute w-full shadow-xl pb-4">
+            <a href="#layanan" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Layanan</a>
+            <a href="#merk" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Merk</a>
+            <a href="#keunggulan" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Keunggulan</a>
+            <a href="#testimoni" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium">Testimoni</a>
+            <div class="px-4 mt-4">
+                <button onclick="openWhatsApp()" class="w-full bg-primary hover:bg-primaryDark text-white px-6 py-3 rounded-full font-medium transition flex justify-center items-center">
+                    <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Konsultasi Gratis via WA
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Text Content -->
+                <div class="w-full lg:w-1/2 lg:pr-12 text-center lg:text-left mb-12 lg:mb-0">
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-red-100 text-primary font-semibold text-sm mb-6 border border-red-200">
+                        <i class="fa-solid fa-bolt mr-2"></i> Layanan Panggilan Cepat
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Kompor Gas Bermasalah? <span class="text-primary block mt-2">Biar Kami Yang Bereskan!</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                        Spesialis servis kompor gas tanam dan freestanding. Profesional, bergaransi, dan langsung dikerjakan di rumah Anda.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button onclick="openWhatsApp()" class="w-full sm:w-auto bg-whatsapp hover:bg-whatsappDark text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg shadow-green-500/30 flex items-center justify-center transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp text-2xl mr-2"></i> Panggil Teknisi (WA)
+                        </button>
+                        <a href="#layanan" class="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 px-8 py-4 rounded-full font-semibold text-lg transition text-center">
+                            Lihat Layanan
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center justify-center lg:justify-start space-x-4 text-sm font-medium text-gray-500">
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Teknisi Ahli</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Bergaransi</div>
+                        <div class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Sparepart Asli</div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="w-full lg:w-1/2 relative">
+                    <!-- Placeholder for Hero Image -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white border-8 border-white transform lg:rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80" alt="Api Kompor Gas Biru" class="w-full h-auto object-cover">
+                        <!-- Badge overlay -->
+                        <div class="absolute top-4 right-4 bg-white p-3 rounded-xl shadow-lg flex items-center space-x-3 animate-pulse">
+                            <div class="bg-green-100 text-green-600 rounded-full w-10 h-10 flex items-center justify-center">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500">Pelanggan Puas</p>
+                                <p class="font-bold text-gray-800">1000+</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative blobs -->
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="merk" class="py-12 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">Spesialis Menangani Merk Terkemuka</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-80">
+                <!-- Using text placeholders since actual logos might not load reliably, but styled nicely -->
+                <div class="brand-logo text-3xl font-extrabold text-gray-700 tracking-tighter">
+                    MODENA
+                </div>
+                <div class="brand-logo text-3xl font-serif font-bold text-gray-700 italic">
+                    Delizia
+                </div>
+                <div class="brand-logo text-4xl font-bold text-gray-700 flex items-center">
+                    <span class="text-primary text-5xl mr-1">T</span>EKA
+                </div>
+                <div class="brand-logo text-3xl font-black text-gray-700 tracking-wider">
+                    Rinnai
+                </div>
+            </div>
+            <p class="text-center text-gray-500 mt-6 text-sm">...dan berbagai merk kompor gas lainnya.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-primary font-semibold tracking-wide uppercase mb-2">Layanan Kami</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Solusi Tuntas Masalah Kompor Anda</h3>
+                <p class="text-gray-600 text-lg">Jangan biarkan aktivitas memasak terganggu. Kami siap menangani berbagai jenis kerusakan pada kompor gas Anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primaryDark group-hover:text-white transition-all duration-300 relative icon-glow animate-icon-float" style="animation-delay: 0s;">
+                        <i class="fa-solid fa-fire group-hover:scale-125 transition-transform duration-300"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Api Merah / Kecil</h4>
+                    <p class="text-gray-600 mb-4">Pembersihan dan penyetelan saluran gas yang tersumbat kotoran atau sisa makanan agar api kembali biru dan besar.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primaryDark group-hover:text-white transition-all duration-300 relative icon-glow animate-icon-float" style="animation-delay: 0.2s;">
+                        <i class="fa-solid fa-ban group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Kompor Susah Nyala</h4>
+                    <p class="text-gray-600 mb-4">Perbaikan atau penggantian pemantik (lighter), baterai, atau modul ignition yang rusak sehingga kompor mudah dinyalakan.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primaryDark group-hover:text-white transition-all duration-300 relative icon-glow animate-icon-float" style="animation-delay: 0.4s;">
+                        <i class="fa-solid fa-wind group-hover:-translate-x-1 group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Bau Gas / Kebocoran</h4>
+                    <p class="text-gray-600 mb-4">Pengecekan instalasi selang, regulator, dan pipa dalam kompor untuk memastikan tidak ada kebocoran gas yang berbahaya.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primaryDark group-hover:text-white transition-all duration-300 relative icon-glow animate-icon-float" style="animation-delay: 0.6s;">
+                        <i class="fa-solid fa-kitchen-set group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-300"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Servis Kompor Tanam</h4>
+                    <p class="text-gray-600 mb-4">Perawatan khusus untuk kompor gas tanam (built-in hob) seperti pembersihan tungku, perbaikan kaca pecah, atau knop macet.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primaryDark group-hover:text-white transition-all duration-300 relative icon-glow animate-icon-float" style="animation-delay: 0.8s;">
+                        <i class="fa-solid fa-box group-hover:scale-110 group-hover:translate-y-1 transition-transform duration-300"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Servis Kompor Freestanding</h4>
+                    <p class="text-gray-600 mb-4">Perbaikan kompor freestanding oven, termasuk perbaikan api oven yang tidak mau menyala atau mati sendiri.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-50 text-primary rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primaryDark group-hover:text-white transition-all duration-300 relative icon-glow animate-icon-float" style="animation-delay: 1s;">
+                        <i class="fa-solid fa-shower group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Cleaning Total</h4>
+                    <p class="text-gray-600 mb-4">Pembersihan menyeluruh bagian luar dan dalam kompor dari lemak membandel untuk menjaga keawetan dan higienitas.</p>
+                </div>
+            </div>
+
+            <!-- CTA Service -->
+            <div class="mt-12 text-center bg-red-50 rounded-3xl p-8 md:p-12 border border-red-100">
+                <h4 class="text-2xl font-bold text-gray-900 mb-4">Mengalami masalah lain pada kompor Anda?</h4>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Ceritakan kendala Anda kepada teknisi kami untuk mendapatkan estimasi perbaikan segera.</p>
+                <button onclick="openWhatsApp()" class="bg-primary hover:bg-primaryDark text-white px-8 py-3 rounded-full font-semibold text-lg transition inline-flex items-center">
+                    <i class="fa-solid fa-comment-dots mr-2"></i> Konsultasi Gratis Sekarang
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Why Us Section -->
+    <section id="keunggulan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image -->
+                <div class="w-full lg:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80" alt="Teknisi bekerja" class="w-full h-64 object-cover rounded-2xl shadow-md mt-8">
+                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=400&q=80" alt="Sparepart" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-primary font-semibold tracking-wide uppercase mb-2">Mengapa Memilih Kami</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Layanan Profesional Langsung ke Rumah Anda</h3>
+                    <p class="text-gray-600 text-lg mb-8">
+                        Kami mengutamakan kualitas perbaikan, kejujuran, dan kepuasan pelanggan. Tidak perlu repot membawa kompor rusak, teknisi kami yang akan datang.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100 text-primary">
+                                    <i class="fa-solid fa-truck-fast text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">Respon & Kedatangan Cepat</h4>
+                                <p class="mt-2 text-gray-600">Jadwalkan perbaikan di hari yang sama. Kami memahami pentingnya kompor untuk kebutuhan dapur Anda.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100 text-primary">
+                                    <i class="fa-solid fa-user-gear text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">Teknisi Berpengalaman</h4>
+                                <p class="mt-2 text-gray-600">Tim kami terlatih dan berpengalaman menangani berbagai merk kompor premium seperti Modena, Teka, dll.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-red-100 text-primary">
+                                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-xl font-bold text-gray-900">Garansi Perbaikan</h4>
+                                <p class="mt-2 text-gray-600">Setiap pekerjaan servis kami lengkapi dengan garansi. Anda tenang, kompor aman digunakan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Cara Memesan Layanan Kami</h2>
+                <p class="text-gray-400 text-lg">Proses mudah dan transparan. Kompor Anda kembali normal dalam 3 langkah.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connecting line for desktop -->
+                <div class="hidden md:block absolute top-12 left-[15%] right-[15%] h-0.5 bg-gray-700"></div>
+
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center text-3xl font-bold text-primary border-4 border-gray-900 mb-6 shadow-[0_0_0_4px_rgba(239,68,68,0.2)]">
+                        1
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Hubungi Kami</h4>
+                    <p class="text-gray-400">Jelaskan keluhan kompor dan merknya melalui WhatsApp. Kirimkan foto atau video jika perlu.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center mt-8 md:mt-0">
+                    <div class="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center text-3xl font-bold text-primary border-4 border-gray-900 mb-6 shadow-[0_0_0_4px_rgba(239,68,68,0.2)]">
+                        2
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Pengecekan & Estimasi</h4>
+                    <p class="text-gray-400">Teknisi datang ke lokasi Anda, melakukan pengecekan menyeluruh, dan memberikan estimasi biaya sebelum pengerjaan.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center mt-8 md:mt-0">
+                    <div class="w-24 h-24 bg-primary rounded-full flex items-center justify-center text-3xl font-bold text-white border-4 border-gray-900 mb-6 shadow-[0_0_0_8px_rgba(239,68,68,0.2)]">
+                        3
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">Proses Perbaikan</h4>
+                    <p class="text-gray-400">Pengerjaan dilakukan di tempat. Setelah selesai dan kompor berfungsi normal kembali, baru lakukan pembayaran.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button onclick="openWhatsApp()" class="bg-whatsapp hover:bg-whatsappDark text-white px-10 py-4 rounded-full font-bold text-xl transition inline-flex items-center">
+                    Mulai Langkah 1 via WA <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimoni" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-primary font-semibold tracking-wide uppercase mb-2">Testimoni</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Apa Kata Pelanggan Kami</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Respon sangat cepat! Kompor Modena saya api nya merah dan bikin panci hitam. Panggil teknisi jam 9 pagi, jam 11 sudah sampai. Sekarang api sudah biru lagi. Mantap!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">I</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Ibu Ratna</h4>
+                            <p class="text-sm text-gray-500">Servis Modena Tanam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Pemantik kompor Rinnai mati total, sudah ganti baterai tetap gak bisa. Teknisi datang, cek sebentar langsung ketemu masalahnya di modul. Harga sparepart wajar dan transparan."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">B</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Bpk. Budi</h4>
+                            <p class="text-sm text-gray-500">Servis Rinnai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Sempat panik karena tercium bau gas dari kompor Teka saya. Hubungi via WA, teknisi mengedukasi langkah pertama lalu segera datang. Masalah teratasi, pelayanan profesional."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">S</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Siska A.</h4>
+                            <p class="text-sm text-gray-500">Servis Teka</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary"></div>
+        <!-- Decorative pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Jangan Tunggu Kerusakan Bertambah Parah!</h2>
+            <p class="text-xl text-red-100 mb-10">Segera hubungi kami untuk memperbaiki kompor gas Anda agar kembali aman dan nyaman digunakan.</p>
+            
+            <button onclick="openWhatsApp()" class="bg-white hover:bg-gray-100 text-primary px-10 py-5 rounded-full font-bold text-xl transition shadow-xl flex items-center justify-center mx-auto transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-3xl mr-3 text-whatsapp"></i> 
+                Hubungi 0813-1609-7732
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-fire-burner text-primary text-2xl mr-2"></i>
+                        <span class="font-bold text-xl text-white tracking-tight">Klinik<span class="text-primary">Kompor</span></span>
+                    </div>
+                    <p class="mb-4">Layanan spesialis perbaikan kompor gas panggilan profesional, terpercaya, dan bergaransi.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Layanan Kami</h4>
+                    <ul class="space-y-2">
+                        <li>Servis Kompor Tanam</li>
+                        <li>Servis Kompor Freestanding</li>
+                        <li>Perbaikan Pemantik Mati</li>
+                        <li>Pembersihan Tungku</li>
+                        <li>Penanganan Kebocoran Gas</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Kontak</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-brands fa-whatsapp text-whatsapp mt-1 mr-3"></i>
+                            <a href="#" onclick="openWhatsApp()" class="hover:text-white transition">0813-1609-7732</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-clock mt-1 mr-3"></i>
+                            <span>Buka Setiap Hari<br>08.00 - 20.00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-sm">
+                <p>&copy; 2026 Klinik Kompor. All rights reserved. Jasa Servis Kompor Panggilan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" onclick="openWhatsApp(); return false;" class="float-wa" target="_blank" aria-label="Chat WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar styling on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('py-4');
+                nav.classList.add('py-2');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('py-4');
+                nav.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
