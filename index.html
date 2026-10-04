@@ -29,6 +29,7 @@
             }
         }
     </script>
+    
     <style>
         html {
             scroll-behavior: smooth;
@@ -45,6 +46,19 @@
             filter: grayscale(0%) opacity(1);
             transform: scale(1.05);
         }
+        /* Elementor-safe centered navigation */
+        nav.fixed {
+            left: 0;
+            right: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        nav.fixed > div {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
         /* Floating WhatsApp Button */
         .float-wa {
             position: fixed;
@@ -97,7 +111,7 @@
 
     <!-- WhatsApp Number constant for easy updating -->
     <script>
-        const waNumber = "6281316097732";
+        const waNumber = "6282320410880";
         const waMessage = encodeURIComponent("Halo, saya ingin menanyakan tentang jasa servis kompor.");
         const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
         
@@ -107,43 +121,57 @@
     </script>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-4">
+    <nav class="fixed w-full z-50 bg-white shadow-md py-4 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <i class="fa-solid fa-fire-burner text-primary text-3xl mr-2"></i>
-                    <span class="font-bold text-xl tracking-tight">Klinik<span class="text-primary">Kompor</span></span>
+            <div class="grid grid-cols-3 items-center">
+                <!-- Logo -->
+                <div class="flex items-center justify-start min-w-0">
+                    <i class="fa-solid fa-fire-burner text-primary text-3xl mr-2 flex-shrink-0"></i>
+                    <span class="font-bold text-xl tracking-tight whitespace-nowrap">
+                        Klinik<span class="text-primary">Kompor</span>
+                    </span>
                 </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center justify-center space-x-8 whitespace-nowrap">
                     <a href="#layanan" class="text-gray-600 hover:text-primary font-medium transition">Layanan</a>
                     <a href="#merk" class="text-gray-600 hover:text-primary font-medium transition">Merk</a>
                     <a href="#keunggulan" class="text-gray-600 hover:text-primary font-medium transition">Keunggulan</a>
                     <a href="#testimoni" class="text-gray-600 hover:text-primary font-medium transition">Testimoni</a>
-                    <button onclick="openWhatsApp()" class="bg-primary hover:bg-primaryDark text-white px-6 py-2 rounded-full font-medium transition shadow-lg shadow-red-500/30 flex items-center">
-                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i> Hubungi Sekarang
+                    <a href="#lokasi" class="text-gray-600 hover:text-primary font-medium transition">Lokasi</a>
+                </div>
+
+                <!-- Desktop WhatsApp Button -->
+                <div class="hidden md:flex justify-end">
+                    <button onclick="openWhatsApp()"
+                        class="bg-primary hover:bg-primaryDark text-white px-6 py-2 rounded-full font-medium transition shadow-lg shadow-red-500/30 flex items-center whitespace-nowrap">
+                        <i class="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                        Hubungi Sekarang
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden col-span-2 flex items-center justify-end">
                     <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t mt-4 absolute w-full shadow-xl pb-4">
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t mt-4 absolute w-full shadow-xl pb-4">
             <a href="#layanan" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Layanan</a>
             <a href="#merk" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Merk</a>
             <a href="#keunggulan" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Keunggulan</a>
-            <a href="#testimoni" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium">Testimoni</a>
+            <a href="#testimoni" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Testimoni</a>
+            <a href="#lokasi" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-primary font-medium border-b">Lokasi</a>
             <div class="px-4 mt-4">
-                <button onclick="openWhatsApp()" class="w-full bg-primary hover:bg-primaryDark text-white px-6 py-3 rounded-full font-medium transition flex justify-center items-center">
-                    <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Konsultasi Gratis via WA
+                <button onclick="openWhatsApp()"
+                    class="w-full bg-primary hover:bg-primaryDark text-white px-6 py-3 rounded-full font-medium transition flex justify-center items-center">
+                    <i class="fa-brands fa-whatsapp mr-2 text-xl"></i>
+                    Konsultasi Gratis via WA
                 </button>
             </div>
         </div>
@@ -183,11 +211,10 @@
                 
                 <!-- Hero Image -->
                 <div class="w-full lg:w-1/2 relative">
-                    <!-- Placeholder for Hero Image -->
                     <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-white border-8 border-white transform lg:rotate-2 hover:rotate-0 transition duration-500">
                         <img src="https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=800&q=80" alt="Api Kompor Gas Biru" class="w-full h-auto object-cover">
                         <!-- Badge overlay -->
-                        <div class="absolute top-4 right-4 bg-white p-3 rounded-xl shadow-lg flex items-center space-x-3 animate-pulse">
+                        <div class="absolute top-4 right-4 bg-white p-3 rounded-xl shadow-lg flex items-center space-x-3">
                             <div class="bg-green-100 text-green-600 rounded-full w-10 h-10 flex items-center justify-center">
                                 <i class="fa-solid fa-thumbs-up"></i>
                             </div>
@@ -199,8 +226,8 @@
                     </div>
                     
                     <!-- Decorative blobs -->
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
+                    <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-70"></div>
                 </div>
             </div>
         </div>
@@ -211,7 +238,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-8">Spesialis Menangani Merk Terkemuka</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-80">
-                <!-- Using text placeholders since actual logos might not load reliably, but styled nicely -->
                 <div class="brand-logo text-3xl font-extrabold text-gray-700 tracking-tighter">
                     MODENA
                 </div>
@@ -312,8 +338,8 @@
                 <!-- Image -->
                 <div class="w-full lg:w-1/2">
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=400&q=80" alt="Teknisi bekerja" class="w-full h-64 object-cover rounded-2xl shadow-md mt-8">
-                        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=400&q=80" alt="Sparepart" class="w-full h-64 object-cover rounded-2xl shadow-md">
+                        <img src="https://drive.google.com/thumbnail?id=1bmUNMxkCodmAkFXpJs7yOjn4rNTX5DOu&sz=w400&q=80" alt="Teknisi bekerja" class="w-full h-64 object-cover rounded-2xl shadow-md mt-8">
+                        <img src="https://drive.google.com/thumbnail?id=1PDeP71xdycldsATDOKof-5RmYHcWE6f9&sz=w400&q=80" alt="Sparepart" class="w-full h-64 object-cover rounded-2xl shadow-md">
                     </div>
                 </div>
 
@@ -415,6 +441,82 @@
         </div>
     </section>
 
+    <!-- Album Section -->
+    <section id="album" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-primary font-semibold tracking-wide uppercase mb-2">Album Kami</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Galeri Hasil Pengerjaan</h3>
+                <p class="text-gray-600 text-lg">Beberapa dokumentasi perbaikan dan perawatan kompor pelanggan kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Image 1 -->
+                <div class="group overflow-hidden rounded-2xl shadow-sm relative bg-gray-900 flex items-center justify-center">
+                    <!-- Layer Background Blur -->
+                    <img src="https://drive.google.com/thumbnail?id=19uD8Jn7Y1E6iyEntF278PfmAph86PnYe&sz=w500&q=80" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-60 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Main Image (Utuh) -->
+                    <img src="https://drive.google.com/thumbnail?id=19uD8Jn7Y1E6iyEntF278PfmAph86PnYe&sz=w500&q=80" alt="Hasil servis kompor" class="w-full h-64 object-contain relative z-10 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Overlay dengan efek kaca buram (backdrop-blur) -->
+                    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center z-20">
+                        <i class="fa-solid fa-fire-burner text-white text-3xl mb-2"></i>
+                        <span class="text-white font-medium px-4 text-center">Kompor Tanam Bersih</span>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="group overflow-hidden rounded-2xl shadow-sm relative bg-gray-900 flex items-center justify-center">
+                    <!-- Layer Background Blur -->
+                    <img src="https://drive.google.com/thumbnail?id=1_y9HeN-UY1hcljpiDQpqEveBG4vBT5CF&sz=w500&q=80" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-60 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Main Image (Utuh) -->
+                    <img src="https://drive.google.com/thumbnail?id=1_y9HeN-UY1hcljpiDQpqEveBG4vBT5CF&sz=w500&q=80" alt="Api kompor biru" class="w-full h-64 object-contain relative z-10 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Overlay dengan efek kaca buram (backdrop-blur) -->
+                    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center z-20">
+                        <i class="fa-solid fa-fire text-white text-3xl mb-2"></i>
+                        <span class="text-white font-medium px-4 text-center">Api Biru Merata</span>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="group overflow-hidden rounded-2xl shadow-sm relative bg-gray-900 flex items-center justify-center">
+                    <!-- Layer Background Blur -->
+                    <img src="https://drive.google.com/thumbnail?id=1kXR0gsp9iF5ZCVd6hF575E_QLtSBzC0D&sz=w500&q=80" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-60 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Main Image (Utuh) -->
+                    <img src="https://drive.google.com/thumbnail?id=1kXR0gsp9iF5ZCVd6hF575E_QLtSBzC0D&sz=w500&q=80" alt="Kompor Modena" class="w-full h-64 object-contain relative z-10 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Overlay dengan efek kaca buram (backdrop-blur) -->
+                    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center z-20">
+                        <i class="fa-solid fa-wrench text-white text-3xl mb-2"></i>
+                        <span class="text-white font-medium px-4 text-center">Perbaikan Freestanding</span>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="group overflow-hidden rounded-2xl shadow-sm relative bg-gray-900 flex items-center justify-center">
+                    <!-- Layer Background Blur -->
+                    <img src="https://drive.google.com/thumbnail?id=1BK6TkW_zDTEM6QFArrjVxMBlpAj0rULP&sz=w500&q=80" alt="" class="absolute inset-0 w-full h-full object-cover filter blur-lg opacity-60 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Main Image (Utuh) -->
+                    <img src="https://drive.google.com/thumbnail?id=1BK6TkW_zDTEM6QFArrjVxMBlpAj0rULP&sz=w500&q=80" alt="Perbaikan komponen kompor" class="w-full h-64 object-contain relative z-10 transform group-hover:scale-110 transition duration-500">
+                    
+                    <!-- Overlay dengan efek kaca buram (backdrop-blur) -->
+                    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col items-center justify-center z-20">
+                        <i class="fa-solid fa-check-double text-white text-3xl mb-2"></i>
+                        <span class="text-white font-medium px-4 text-center">Siap Digunakan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold text-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fa-regular fa-images mr-2"></i> Lihat Album Lainnya
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials -->
     <section id="testimoni" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -475,7 +577,6 @@
     <!-- CTA Final Section -->
     <section class="py-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-primary"></div>
-        <!-- Decorative pattern -->
         <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -484,26 +585,29 @@
             
             <button onclick="openWhatsApp()" class="bg-white hover:bg-gray-100 text-primary px-10 py-5 rounded-full font-bold text-xl transition shadow-xl flex items-center justify-center mx-auto transform hover:scale-105">
                 <i class="fa-brands fa-whatsapp text-3xl mr-3 text-whatsapp"></i> 
-                Hubungi 0813-1609-7732
+                Hubungi 0823-2041-0880
             </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
+    <footer id="lokasi" class="bg-gray-900 text-gray-400 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
+            <!-- Grid 4 kolom untuk memberikan space yang pas untuk Peta -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Kolom 1 -->
                 <div>
                     <div class="flex items-center mb-4">
                         <i class="fa-solid fa-fire-burner text-primary text-2xl mr-2"></i>
                         <span class="font-bold text-xl text-white tracking-tight">Klinik<span class="text-primary">Kompor</span></span>
                     </div>
-                    <p class="mb-4">Layanan spesialis perbaikan kompor gas panggilan profesional, terpercaya, dan bergaransi.</p>
+                    <p class="mb-4 text-sm leading-relaxed">Layanan spesialis perbaikan kompor gas panggilan profesional, terpercaya, dan bergaransi.</p>
                 </div>
                 
+                <!-- Kolom 2 -->
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Layanan Kami</h4>
-                    <ul class="space-y-2">
+                    <ul class="space-y-2 text-sm">
                         <li>Servis Kompor Tanam</li>
                         <li>Servis Kompor Freestanding</li>
                         <li>Perbaikan Pemantik Mati</li>
@@ -512,18 +616,28 @@
                     </ul>
                 </div>
                 
+                <!-- Kolom 3 -->
                 <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Kontak</h4>
-                    <ul class="space-y-4">
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Kontak & Lokasi</h4>
+                    <ul class="space-y-4 text-sm">
                         <li class="flex items-start">
-                            <i class="fa-brands fa-whatsapp text-whatsapp mt-1 mr-3"></i>
-                            <a href="#" onclick="openWhatsApp()" class="hover:text-white transition">0813-1609-7732</a>
+                            <i class="fa-brands fa-whatsapp text-whatsapp mt-1 mr-3 text-lg"></i>
+                            <a href="#" onclick="openWhatsApp()" class="hover:text-white transition">0823-2041-0880</a>
                         </li>
                         <li class="flex items-start">
-                            <i class="fa-solid fa-clock mt-1 mr-3"></i>
+                            <i class="fa-solid fa-clock mt-1 mr-3 text-primary"></i>
                             <span>Buka Setiap Hari<br>08.00 - 20.00 WIB</span>
                         </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 mr-3 text-primary"></i>
+                            <span>Jl. Margonda Raya No. 88<br>Kota Depok, Jawa Barat 16423</span>
+                        </li>
                     </ul>
+                </div>
+
+                <!-- Kolom 4 (Google Maps) -->
+                <div class="h-48 md:h-full min-h-[200px] w-full rounded-xl overflow-hidden shadow-inner border border-gray-800">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126907.03960309998!2d106.7420421!3d-6.2891395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d8546ad633d%3A0x79e8de8965402078!2sDepok%2C%20Depok%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
             
